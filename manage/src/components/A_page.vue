@@ -1,14 +1,11 @@
 <!--  -->
 <template>
-  <div>
-    <div>这是index页面</div>
-
-    <router-link :to="{ path: '/A_page' }">跳转A</router-link>
-  </div>
+  <div>这是A页面</div>
 </template>
 
 <script>
 export default {
+  name:"A_page",
   components: {},
   data() {
     return {};
@@ -36,9 +33,10 @@ export default {
   //生命周期 - 销毁完成
   destroyed() {},
   //如果页面有keep-alive缓存功能，这个函数会触发
-  activated() {}
+  activated() {},
 };
 </script>
 
 <style>
+
 </style>
