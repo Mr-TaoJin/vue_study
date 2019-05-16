@@ -25,7 +25,65 @@ export const constantRouterMap = [
         path: 'home',
         name: 'home',
         component: () => import('@/views/home'),
-        meta: {title: '首页'}
+        meta: {icon: 'question',title: '首页'}
+      }
+    ]
+  },
+  {
+    path: '/',
+    component: Layout,
+    redirect: '/home',
+    meta: {
+      icon: 'svg-aperture',
+      title: '首页'
+    },
+    children: [
+      {
+        path: 'index',
+        name: 'Introduction',
+        component: () => import('@/views/home'),
+        meta: {icon: 'warning', title: '首页1'}
+      }
+    ]
+  },
+  {
+    path: '/user',
+    component: Layout,
+    // hidden: true,
+    meta: {
+      icon: 'tickets',
+      title: '个人中心'
+    },
+    children: [
+      {
+        path: 'profile',
+        name: 'Profile',
+        component: () => import('@/views/user/profile'),
+        meta: {icon: 'warning', title: '个人中心'}
+      },
+      {
+        path: 'avatar',
+        name: 'Avatar',
+        component: () => import('@/views/user/profile'),
+        meta: {icon: 'warning', title: '修改头像'}
+      }
+    ]
+  },
+  {
+    path: '/introduction',
+    component: Layout,
+    redirect: '/introduction/index',
+    // alwaysShow: true,
+    meta: {
+      icon: 'svg-aperture',
+      title: '简述'
+    },
+    children: [
+      {
+        path: 'index',
+        name: 'Introduction',
+        component: () => import('@/views/introduction/index'),
+        meta: {icon: 'question', title: '简述'}
       }
     ]
   },

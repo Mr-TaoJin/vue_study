@@ -266,7 +266,7 @@
     }
   }
 </script>
-<style scoped lang="scss">
+<style scoped lang="stylus">
   .login-container {
     position: absolute;
     width: 100%;

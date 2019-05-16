@@ -28,6 +28,9 @@
         'routers'
       ])
     },
+    mounted(){
+      // console.log(this.routers,'routers')
+    },
     methods: {
       handleOpen(key, keyPath) {
         console.log('handleOpen', key, keyPath)
@@ -41,7 +44,7 @@
 <style scoped lang="stylus">
   .el-menu-vertical:not(.el-menu--collapse)
     position fixed
-    top 61px
+    top 60px
     width 200px
     height 100%
     min-height 500px

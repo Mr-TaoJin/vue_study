@@ -93,9 +93,14 @@
   }
 </script>
 <style scoped lang="stylus">
+  .el-menu-item{
+    height 60px;
+    line-height 60px;
+  }
   .navbar {
     position fixed
     width 100%
+    height 60px
     z-index 10
     background-image -webkit-gradient(linear, left top, right top, from(#1278f6), to(#00b4aa))
     background-image -webkit-linear-gradient(45deg, #1278f6, #00b4aa 50%, #1278f6)
