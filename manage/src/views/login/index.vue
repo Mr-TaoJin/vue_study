@@ -266,7 +266,7 @@
     }
   }
 </script>
-<style scoped lang="stylus">
+<style scoped lang="scss">
   .login-container {
     position: absolute;
     width: 100%;
@@ -293,9 +293,9 @@
       height: 450px;
       background: #fff;
       .el-card-header {
-        text-align: center
+        text-align: center;
         .lang-select {
-          float right
+          float:right
         }
       }
       .login-title {

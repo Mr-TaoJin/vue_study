@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from '@/views/login' //登录
+import Login from '@/views/login' //登录页面
+import Layout from '@/layout/layout' //布局
 
 Vue.use(Router)
 
@@ -13,6 +14,20 @@ export const constantRouterMap = [
     meta: {
       title: '登录'
     }
+  },
+  {
+    path: '/',
+    hidden: true,
+    component: Layout,
+    redirect: '/home',
+    children: [
+      {
+        path: 'home',
+        name: 'home',
+        component: () => import('@/views/home'),
+        meta: {title: '首页'}
+      }
+    ]
   },
 ]
 export default new Router({
