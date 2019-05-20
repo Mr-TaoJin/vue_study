@@ -1,10 +1,16 @@
 <template>
   <div :class="classObj" class="app-wrapper">
     <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside"/>
+    <!-- 左侧菜单 -->
     <sidebar class="sidebar-container"/>
     <div class="main-container">
-      <navbar/>
-      <tags-view />
+      <div class="fixed_header">
+        <!-- 导航栏 -->
+        <navbar/>
+        <!-- 标签视图 -->
+        <tags-view />
+      </div>
+      <div style="margin-top:84px;"></div>
       <app-main/>
     </div>
   </div>
@@ -23,6 +29,11 @@ export default {
     TagsView
   },
   mixins: [ResizeMixin],
+  data(){
+    return{
+      ishideSidebar:false
+    }
+  },
   computed: {
     sidebar() {
       return this.$store.state.app.sidebar
@@ -49,6 +60,20 @@ export default {
 
 <style rel="stylesheet/scss" lang="scss" scoped>
   @import "src/styles/mixin.scss";
+  .fixed_header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9;
+    width: calc(100% - 210px);
+    -webkit-transition: width .28s;
+    transition: width .28s;
+    background: #ffffff;
+  }
+  .hideSidebar .fixed_header {
+    width: calc(100% - 54px);
+    transition: width .28s;
+  }
   .app-wrapper {
     @include clearfix;
     position: relative;
