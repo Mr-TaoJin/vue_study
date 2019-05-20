@@ -210,6 +210,7 @@ export default {
       font-size: 12px;
       margin-left: 5px;
       margin-top: 4px;
+      border-radius: 4px;
       &:first-of-type {
         margin-left: 15px;
       }
@@ -217,9 +218,9 @@ export default {
         margin-right: 15px;
       }
       &.active {
-        background-color: #42b983;
+        background-color: #00b4aa;
         color: #fff;
-        border-color: #42b983;
+        border-color: #00b4aa;
         &::before {
           content: '';
           background: #fff;
@@ -272,7 +273,8 @@ export default {
       &:before {
         transform: scale(.6);
         display: inline-block;
-        vertical-align: -3px;
+        vertical-align: -2px;
+        margin-right:-1px;
       }
       &:hover {
         background-color: #b4bccc;

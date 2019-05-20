@@ -14,12 +14,13 @@ import Layout from '../views/layout/Layout'
 * alwaysShow: true               if set true, will always show the root menu, whatever its child routes length
 *                                if not set alwaysShow, only more than one route under the children
 *                                it will becomes nested mode, otherwise not show the root menu
-* redirect: noredirect           if `redirect:noredirect` will no redirect in the breadcrumb
+* redirect: noredirect           如果“redirect:noredirect”不会在面包屑中重定向
 * name:'router-name'             the name is used by <keep-alive> (must set!!!)
 * meta : {
     title: 'title'               the name show in subMenu and breadcrumb (recommend set)
     icon: 'svg-name'             the icon show in the sidebar
-    breadcrumb: false            if false, the item will hidden in breadcrumb(default is true)
+    breadcrumb: false            如果为false，则该项将隐藏在breadcrumb中(默认为true)
+    affix: true                  如果为真，则标记将附加到标记视图中
   }
 **/
 export const constantRoutes = [
@@ -32,10 +33,12 @@ export const constantRoutes = [
     redirect: '/dashboard',
     name: 'Dashboard',
     // hidden: true,
-    meta: { title: '首页', icon: 'dashboard' },
+    // meta: { title: '首页', icon: 'dashboard' },
     children: [{
       path: 'dashboard',
-      component: () => import('@/views/dashboard/index')
+      component: () => import('@/views/dashboard/index'),
+      name: 'Dashboard',
+      meta: { title: '首页', icon: 'dashboard', affix: true }
     }]
   },
 
