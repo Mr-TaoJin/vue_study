@@ -2,29 +2,21 @@ import Vue from 'vue'
 
 import Cookies from 'js-cookie'
 
-import 'normalize.css/normalize.css' // A modern alternative to CSS resets
+import 'normalize.css/normalize.css' // CSS 基本样式重置
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
-import '@/styles/index.scss' // global css
+import '@/styles/index.scss' // 全局 css
 
 import App from './App'
 import store from './store'
 import router from './router'
 
-import i18n from './lang' // Internationalization
-import '@/icons' // icon
-import '@/permission' // permission control
+import i18n from './lang' // 国际化
+import '@/icons' // 图标
+import '@/permission' // 权限控制
 
-/**
- * This project originally used easy-mock to simulate data,
- * but its official service is very unstable,
- * and you can build your own service if you need it.
- * So here I use Mock.js for local emulation,
- * it will intercept your request, so you won't see the request in the network.
- * If you remove `../mock` it will automatically request easy-mock data.
- */
 import '../mock' // simulation data
 
 
@@ -32,7 +24,7 @@ Vue.use(ElementUI, {
   size: Cookies.get('size') || 'medium', // set element-ui default size
   i18n: (key, value) => i18n.t(key, value)
 })
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 new Vue({
   el: '#app',

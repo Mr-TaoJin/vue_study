@@ -12,10 +12,6 @@ body {
   font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
 }
 
-label {
-  font-weight: 700;
-}
-
 html {
   height: 100%;
   box-sizing: border-box;
@@ -67,7 +63,29 @@ a:hover {
     height: 0;
   }
 }
-
+.fl { float: left; }
+.fr { float: right; }
+.tl { text-align: left; }
+.tc { text-align: center; }
+.tr { text-align: right; }
+.vm { vertical-align: middle; }
+.vtb { vertical-align: text-bottom; }
+.vt { vertical-align: top; }
+.oh { overflow: hidden; }
+.pa { position: absolute; }
+.pr { position: relative; }
+.fb { font-weight: bold; }
+.none{ display: none;}
+.block { display: block;}
+.in_b { display: inline-block;}
+.underline{text-decoration:underline;}
+.mt5{ margin-top: 5px;}
+.mt10{ margin-top: 10px;}
+.mt15{ margin-top: 15px;}
+.mt20{ margin-top: 20px;}
+.mb10{ margin-bottom: 10px;}
+.ml10{ margin-left: 10px;}
+.mr10{ margin-right: 10px;}
 //main-container全局样式
 .app-main {
   min-height: 100%
@@ -75,4 +93,36 @@ a:hover {
 
 .app-container {
   padding: 20px;
+}
+
+// 查询条件样式
+.container_box{
+  padding:5px;
+  .title_box {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e4e7ed;
+  }
+  .search_box{
+    box-sizing: border-box;
+    .form_la{
+      display: inline-block;
+      width: 324px;
+      padding:5px 0;
+      box-sizing: border-box;
+      margin-left:20px;
+      .tit_la{
+        display: inline-block;
+        width: 119px;
+      }
+      .el-input{
+        width:200px;
+      }
+    }
+  }
+  .btn_box{
+    padding:10px 0;
+    button{
+      width:120px;
+    }
+  }
 }
