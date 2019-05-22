@@ -75,8 +75,10 @@
     }
   }
 </script>
-<style scoped lang="stylus">
-  .color-line
-    .wrapper
-      margin 0 auto
+<style scoped lang="scss">
+  .color-line{
+    .wrapper{
+      margin :0 auto;
+    }
+  }
 </style>

@@ -15,6 +15,9 @@
   },
   "dependencies": {
     "axios": "0.18.0",
+    "better-scroll": "^1.15.2",
+    "countup.js": "^2.0.4",
+    "echarts": "^4.2.1",
     "element-ui": "2.4.6",
     "js-cookie": "2.2.0",
     "mockjs": "1.0.1-beta3",

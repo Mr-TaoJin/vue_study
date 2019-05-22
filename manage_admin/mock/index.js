@@ -1,6 +1,7 @@
 import Mock from 'mockjs'
 import userAPI from './user'
 import tableAPI from './table'
+import * as homepageAPI from './homepage'
 
 // Fix an issue with setting withCredentials = true, cross-domain request lost cookies
 // https://github.com/nuysoft/Mock/issues/300
@@ -22,5 +23,12 @@ Mock.mock(/\/user\/logout/, 'post', userAPI.logout)
 
 // Table
 Mock.mock(/\/table\/list/, 'get', tableAPI.list)
+
+// 首页 homepage 相关的接口
+Mock.mock('/homepage/hometotal', 'post', homepageAPI.getHomeTotal)
+// 首页 homepageDetailItem 接口
+Mock.mock('/homepage/detailItem', 'post', homepageAPI.getHomeDetailItem)
+// 首页 investmentRank 接口
+Mock.mock('/homepage/investmentRank', 'post', homepageAPI.getHomeInvestmentRank)
 
 export default Mock

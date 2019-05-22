@@ -32,8 +32,6 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/dashboard',
     name: 'Dashboard',
-    // hidden: true,
-    // meta: { title: '首页', icon: 'dashboard' },
     children: [{
       path: 'dashboard',
       component: () => import('@/views/dashboard/index'),
@@ -80,163 +78,108 @@ export const constantRoutes = [
     ]
   },
   {
-    path: '/loan_application',
+    path: '/example',
     component: Layout,
-    redirect: '/loan_application/product_query/list',
-    name: 'Loan_application',
-    meta: {
-      title: '贷款申请管理',
-      icon: 'example'
-    },
+    redirect: '/example/table',
+    name: 'Example',
+    meta: { title: '例子', icon: 'example' },
     children: [
       {
-        path: 'loan_application/product_query/list',
-        component: () => import('@/views/loan_application/product_query/list'),
-        name: 'Product_query1',
-        meta: { title: '审批贷款申请' }
+        path: 'table',
+        name: 'Table',
+        component: () => import('@/views/table/index'),
+        meta: { title: 'Table', icon: 'table' }
       },
       {
-        path: 'loan_application/product_release/list',
-        component: () => import('@/views/loan_application/product_query/list'),
-        name: 'Product_release1',
-        meta: { title: '答复贷款申请' }
+        path: 'tree',
+        name: 'Tree',
+        component: () => import('@/views/tree/index'),
+        meta: { title: 'Tree', icon: 'tree' }
       }
     ]
   },
+
   {
-    path: '/loan_user_query',
+    path: '/form',
     component: Layout,
-    redirect: '/loan_user_query/product_query/list',
-    name: 'Loan_user_query',
+    children: [
+      {
+        path: 'index',
+        name: 'Form',
+        component: () => import('@/views/form/index'),
+        meta: { title: '表单', icon: 'form' }
+      }
+    ]
+  },
+
+  {
+    path: '/nested',
+    component: Layout,
+    redirect: '/nested/menu1',
+    name: 'Nested',
     meta: {
-      title: '贷款用户信息查询',
+      title: '路由嵌套',
       icon: 'nested'
     },
     children: [
       {
-        path: 'product_query/list',
-        component: () => import('@/views/loan_user_query/product_query/list'),
-        name: 'Product_query2',
-        meta: { title: '用户商城征信基本信息查询' }
+        path: 'menu1',
+        component: () => import('@/views/nested/menu1/index'), // Parent router-view
+        name: 'Menu1',
+        meta: { title: 'Menu1' },
+        children: [
+          {
+            path: 'menu1-1',
+            component: () => import('@/views/nested/menu1/menu1-1'),
+            name: 'Menu1-1',
+            meta: { title: 'Menu1-1' }
+          },
+          {
+            path: 'menu1-2',
+            component: () => import('@/views/nested/menu1/menu1-2'),
+            name: 'Menu1-2',
+            meta: { title: 'Menu1-2' },
+            children: [
+              {
+                path: 'menu1-2-1',
+                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
+                name: 'Menu1-2-1',
+                meta: { title: 'Menu1-2-1' }
+              },
+              {
+                path: 'menu1-2-2',
+                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
+                name: 'Menu1-2-2',
+                meta: { title: 'Menu1-2-2' }
+              }
+            ]
+          },
+          {
+            path: 'menu1-3',
+            component: () => import('@/views/nested/menu1/menu1-3'),
+            name: 'Menu1-3',
+            meta: { title: 'Menu1-3' }
+          }
+        ]
       },
       {
-        path: 'loan_user_query/product_release/list',
-        component: () => import('@/views/loan_user_query/product_query/list'),
-        name: 'Product_release2',
-        meta: { title: '黑名单结果查询' }
-      },
-      {
-        path: 'loan_user_query/product_release/list',
-        component: () => import('@/views/loan_user_query/product_query/list'),
-        name: 'Product_release3',
-        meta: { title: '义务信用分查询' }
+        path: 'menu2',
+        component: () => import('@/views/nested/menu2/index'),
+        meta: { title: 'menu2' }
       }
     ]
   },
 
-  // {
-  //   path: '/example',
-  //   component: Layout,
-  //   redirect: '/example/table',
-  //   name: 'Example',
-  //   meta: { title: '例子', icon: 'example' },
-  //   children: [
-  //     {
-  //       path: 'table',
-  //       name: 'Table',
-  //       component: () => import('@/views/table/index'),
-  //       meta: { title: 'Table', icon: 'table' }
-  //     },
-  //     {
-  //       path: 'tree',
-  //       name: 'Tree',
-  //       component: () => import('@/views/tree/index'),
-  //       meta: { title: 'Tree', icon: 'tree' }
-  //     }
-  //   ]
-  // },
-
-  // {
-  //   path: '/form',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: 'index',
-  //       name: 'Form',
-  //       component: () => import('@/views/form/index'),
-  //       meta: { title: '表单', icon: 'form' }
-  //     }
-  //   ]
-  // },
-
-  // {
-  //   path: '/nested',
-  //   component: Layout,
-  //   redirect: '/nested/menu1',
-  //   name: 'Nested',
-  //   meta: {
-  //     title: '路由嵌套',
-  //     icon: 'nested'
-  //   },
-  //   children: [
-  //     {
-  //       path: 'menu1',
-  //       component: () => import('@/views/nested/menu1/index'), // Parent router-view
-  //       name: 'Menu1',
-  //       meta: { title: 'Menu1' },
-  //       children: [
-  //         {
-  //           path: 'menu1-1',
-  //           component: () => import('@/views/nested/menu1/menu1-1'),
-  //           name: 'Menu1-1',
-  //           meta: { title: 'Menu1-1' }
-  //         },
-  //         {
-  //           path: 'menu1-2',
-  //           component: () => import('@/views/nested/menu1/menu1-2'),
-  //           name: 'Menu1-2',
-  //           meta: { title: 'Menu1-2' },
-  //           children: [
-  //             {
-  //               path: 'menu1-2-1',
-  //               component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-  //               name: 'Menu1-2-1',
-  //               meta: { title: 'Menu1-2-1' }
-  //             },
-  //             {
-  //               path: 'menu1-2-2',
-  //               component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-  //               name: 'Menu1-2-2',
-  //               meta: { title: 'Menu1-2-2' }
-  //             }
-  //           ]
-  //         },
-  //         {
-  //           path: 'menu1-3',
-  //           component: () => import('@/views/nested/menu1/menu1-3'),
-  //           name: 'Menu1-3',
-  //           meta: { title: 'Menu1-3' }
-  //         }
-  //       ]
-  //     },
-  //     {
-  //       path: 'menu2',
-  //       component: () => import('@/views/nested/menu2/index'),
-  //       meta: { title: 'menu2' }
-  //     }
-  //   ]
-  // },
-
-  // {
-  //   path: 'external-link',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-  //       meta: { title: '外部链接', icon: 'link' }
-  //     }
-  //   ]
-  // },
+  {
+    path: 'external-link',
+    component: Layout,
+    children: [
+      {
+        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
+        meta: { title: '外部链接', icon: 'link' }
+      }
+    ]
+  },
 
   { path: '*', redirect: '/404', hidden: true }
 ]
