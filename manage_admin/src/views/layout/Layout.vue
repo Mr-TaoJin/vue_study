@@ -3,14 +3,13 @@
     <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside"/>
     <!-- 左侧菜单 -->
     <sidebar class="sidebar-container"/>
-    <div class="main-container">
-      <div class="fixed_header">
+    <div :class="{hasTagsView:needTagsView}" class="main-container">
+      <div :class="{'fixed-header':fixedHeader}">
         <!-- 导航栏 -->
         <navbar/>
         <!-- 标签视图 -->
         <tags-view />
       </div>
-      <div style="margin-top:84px;"></div>
       <app-main/>
     </div>
   </div>
@@ -31,7 +30,9 @@ export default {
   mixins: [ResizeMixin],
   data(){
     return{
-      ishideSidebar:false
+      ishideSidebar:false,
+      fixedHeader:true,
+      needTagsView:true
     }
   },
   computed: {
@@ -60,30 +61,20 @@ export default {
 
 <style rel="stylesheet/scss" lang="scss" scoped>
   @import "src/styles/mixin.scss";
-  .fixed_header{
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 9;
-    width: calc(100% - 210px);
-    -webkit-transition: width .28s;
-    transition: width .28s;
-    background: #ffffff;
-  }
-  .hideSidebar .fixed_header {
-    width: calc(100% - 54px);
-    transition: width .28s;
-  }
+  @import "~@/styles/variables.scss";
+
   .app-wrapper {
     @include clearfix;
     position: relative;
     height: 100%;
     width: 100%;
-    &.mobile.openSidebar{
+
+    &.mobile.openSidebar {
       position: fixed;
       top: 0;
     }
   }
+
   .drawer-bg {
     background: #000;
     opacity: 0.3;
@@ -92,5 +83,23 @@ export default {
     height: 100%;
     position: absolute;
     z-index: 999;
+  }
+
+  .fixed-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    width: calc(100% - #{$sideBarWidth});
+    transition: width 0.28s;
+    background: #fff;
+  }
+
+  .hideSidebar .fixed-header {
+    width: calc(100% - 54px);
+  }
+
+  .mobile .fixed-header {
+    width: 100%;
   }
 </style>

@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-  <div></div>
+  <div>这是新增页面</div>
 </template>
 
 <script>

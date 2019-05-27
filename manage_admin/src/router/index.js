@@ -45,7 +45,7 @@ export const constantRoutes = [
     redirect: '/loan_products/product_query/list',
     name: 'Loan_products',
     meta: {
-      title: '贷款产品管理',
+      title: '产品管理',
       icon: 'nested'
     },
     children: [
@@ -53,13 +53,13 @@ export const constantRoutes = [
         path: 'product_query/list',
         component: () => import('@/views/loan_products/product_query/list'),
         name: 'Product_query',
-        meta: { title: '产品查询列表' }
+        meta: { title: '查询列表' }
       },
       {
         path: 'product_query/add',
         component: () => import('@/views/loan_products/product_query/add'),
         name: 'EditArticle',
-        meta: { title: '产品查询新增', noCache: true, activeMenu: '/example/list' },
+        meta: { title: '查询新增', noCache: true, activeMenu: '/example/list' },
         hidden: true
       },
       // {
@@ -73,7 +73,7 @@ export const constantRoutes = [
         path: 'product_release/list',
         component: () => import('@/views/loan_products/product_query/list'),
         name: 'Product_release',
-        meta: { title: '产品发布列表' }
+        meta: { title: '发布列表' }
       }
     ]
   },
