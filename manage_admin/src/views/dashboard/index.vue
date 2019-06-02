@@ -402,7 +402,7 @@
     margin-top: 15px;
     .financing-sprinkled {
       border: 1px solid #eee;
-      height: 350px;
+      height: 500px;
       .title {
         background: #dde3ef;
         padding: 10px 0;
@@ -540,7 +540,7 @@
               position: relative;
               font-size: 70px;
               left: 20px;
-              top: -70px;
+              top: -100px;
               color: #ddd;
             }
           }
@@ -586,7 +586,7 @@
               position: relative;
               font-size: 70px;
               left: 20px;
-              top: -70px;
+              top: -100px;
               color: #ddd;
             }
           }
